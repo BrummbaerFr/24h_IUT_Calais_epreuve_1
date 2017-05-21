@@ -51,6 +51,8 @@ if __name__ == '__main__':
     reponse_1 = mon_client.recevoir()
     print('Réponse du serveur : ' + reponse_1)
 
+    mon_IA.num_equipe = int(reponse_1)
+
     # Deuxième réponse, cette fois avec le terrain et toutes les infos
     reponse_1 = mon_client.recevoir()
     print('Réponse du serveur : ' + reponse_1)
@@ -58,6 +60,8 @@ if __name__ == '__main__':
     # On peut donc créer le terrain
     mon_IA.set_taille(reponse_1)
     mon_IA.creer_terrain(reponse_1)
+    mon_IA.set_position(reponse_1)
+    mon_IA.trouver_chemin_a_prendre(1, 1)
 
     # Envoyer le premier coup ICI
     mon_client.envoyer('E')
