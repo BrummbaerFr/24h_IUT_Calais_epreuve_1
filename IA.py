@@ -7,10 +7,9 @@ class IA:
     def __init__(self):
         """Constructeur de notre intelligence artificielle.
         On initialise :
-        - la dimension du tableau à zéro (qui sera amenée à être modifiée par set_size)
+        - les dimensions du tableau, la position de l'IA, et la position du but, à -1
         - le terrain de jeu"""
-        self.nb_lignes = 0
-        self.nb_colonnes = 0
+        self.nb_lignes = self.nb_colonnes = self.posX = self.posY = self.butX = self.butY = -1
 
     def set_size(self, reponse_du_serveur):
         """Définit la taille du terrain, en extrayant celle-ci de la réponse du serveur."""

@@ -52,7 +52,7 @@ if __name__ == '__main__':
     reponse_1 = mon_client.recevoir()
     print('Réponse du serveur : ' + reponse_1)
 
-    # Deuxième réponse, cette fois avec le terrain
+    # Deuxième réponse, cette fois avec le terrain et toutes les infos
     reponse_1 = mon_client.recevoir()
     print('Réponse du serveur : ' + reponse_1)
 
