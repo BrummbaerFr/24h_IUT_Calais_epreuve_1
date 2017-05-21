@@ -47,17 +47,21 @@ if __name__ == '__main__':
     mon_client = Client(sys.argv[1], int(sys.argv[2]), sys.argv[3])
     mon_IA = IA()
 
+    # Première réponse du serveur, il envoie toujours "0" en premier
+    # je sais pas pourquoi
     reponse_1 = mon_client.recevoir()
     print('Réponse du serveur : ' + reponse_1)
+
+    # Deuxième réponse, cette fois avec le terrain
+    reponse_1 = mon_client.recevoir()
+    print('Réponse du serveur : ' + reponse_1)
+
+    # On peut donc créer le terrain
+    mon_IA.set_size(reponse_1)
+    mon_IA.creer_terrain(reponse_1)
 
     # Envoyer le premier coup ICI
     mon_client.envoyer('E')
-
-    reponse_1 = mon_client.recevoir()
-    print('Réponse du serveur : ' + reponse_1)
-
-    mon_IA.set_size(reponse_1)
-    mon_IA.creer_terrain(reponse_1)
 
     # while True:
     #     print("Réponse du serveur : " + mon_client.recevoir())
